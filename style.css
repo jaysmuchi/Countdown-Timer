@@ -1,0 +1,612 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    /* background: linear-gradient(to right, #031729, #14ca9e,#8bf9de); */
+    background: #ccc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+}
+h1{
+    font-size: 4rem;
+    font-weight: normal;
+    margin-top: -10rem;
+}
+.countdown-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}
+.big-text{
+    font-size: 6rem;
+    line-height: 1;
+    margin: 0 2rem;
+    font-weight: bold;
+}
+.ct-ol{
+    text-align: center;
+    background: #eee;
+    margin: 0.5rem;
+    padding: 0.8rem;
+}
+.ct-ol span{
+    font-size: 1.5rem;
+}
+button.button{
+    background: #18314f;
+    color: white;
+    padding: 0.8rem 2rem;
+    text-align: center;
+    border-radius: 1rem;
+    height: 2.5rem;
+    width: 10rem;
+    border: none;
+    outline: none;
+    font-weight: normal;
+    margin-top: 15rem;
+    display: flex;
+    position: absolute;
+    text-transform: capitalize;
+}
+button.button:hover{
+    /* box-shadow: white; */
+    cursor: pointer;
+}
+.ct-ol:hover{
+    margin-top: 1rem;
+}
+
+/* Add date  */
+.new-event-container {
+    background: #d5cbcbca;
+    height: 98vh;
+    width: 98vw;
+    display: flex;
+    position: absolute;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    visibility: hidden;
+     /* transition: all ease-in 0.9s; */
+}
+
+/* .add-date-container{
+    background: #eee;
+} */
+.add-date-container {
+    background: #eee;
+    /* background: #ccc; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-position: center center;
+    height: 15rem;
+    width: 30rem;
+    border-radius: 1rem;
+    /* transition: all 5s ease-in-out; */
+    /* transition: all ease-in 0.5s; */
+    /* transition: opacity 0.2s ease-in-out, transform 0.2s 0s ease-in-out;
+    transform: scale(1.2); */
+}
+h1.date-container {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: -7rem 0 0 -10rem;
+}
+input#d-input {
+    outline: none;
+    margin: 0.8rem 0 0 -4rem;
+    width: 21rem;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 2px solid blue;
+}
+/* Button */
+.btn-container {
+    display: flex;
+    position: absolute;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-gap: 2rem;
+    margin: 5rem 0 0 -4rem;
+}
+input.Btn {
+    height: 2rem;
+    width: 9.5rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+input#add-Btn{
+    background: #18314f;
+    color: white;
+}
+input#close-Ctn{
+    background: #ccc;
+}
+span.Btn-close {
+    display: flex;
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 300;
+    top: 0;
+    margin-right: -48rem;
+    margin-top: 2rem;
+}
+span.Btn-close:hover{
+    color: rgba(0, 0, 0, 0.076);
+    cursor: pointer;
+}
+a#follow > button {
+    margin: 21rem 0 0 -5rem;
+    background: #eee;
+    color: black;
+    text-align: center;
+    padding: 0.8rem 3rem;
+}
+
+/* media query  800*/
+@media (max-width: 800px){
+    h1{
+        font-size: 2rem;
+        font-weight: normal;
+        margin-top: -10rem;
+    }
+    .countdown-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 51rem;
+    }
+    .ct-ol{
+        text-align: center;
+        background: #eee;
+        margin: 0 0 0 1rem;
+        padding: 1rem 0 1rem 0;
+    }
+    body {
+        background: #ccc;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
+        position: fixed;
+        height: 100%;
+    }
+    .big-text{
+        font-size:  2rem;
+        line-height: 1;
+        margin: 0 2rem;
+        font-weight: bold;
+    }
+    span.Btn-close {
+        display: flex;
+        position: absolute;
+        font-size: 3rem;
+        font-weight: 300;
+        top: 0;
+        margin-right: -33rem;
+        margin-top: 1rem;
+    }
+    a#follow > button {
+        margin: 20rem 0 0 -5rem;
+        background: #eee;
+        color: black;
+        text-align: center;
+        padding: 0.8rem 3rem;
+    }
+}
+/* media query 500 */
+@media (max-width: 500px){
+    h1{
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-top: -10rem;
+        text-align: center;
+    }
+    body {
+        background: #ccc;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0 -11rem;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
+        position: fixed;
+        height: 100%;
+    }
+    .countdown-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 52rem;
+    }
+    span.Btn-close {
+        display: flex;
+        position: absolute;
+        font-size: 3rem;
+        font-weight: 300;
+        top: 0;
+        margin-right: -29rem;
+        margin-top: 1rem;
+    }
+    .new-event-container {
+        background: #d5cbcbca;
+        height: 98vh;
+        width: 106vw;
+        display: flex;
+        position: absolute;
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        background-position: center center;
+        visibility: hidden;
+        /* transition: all ease-in 0.9s; */
+    }
+    .add-date-container {
+        background: #eee;
+        /* background: #ccc; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-position: center center;
+        height: 15rem;
+        width: 24rem;
+        border-radius: 1rem;
+        /* transition: all 5s ease-in-out; */
+        /* transition: all ease-in 0.5s; */
+    }
+    h1.date-container {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: -7rem 0 0 -6rem;
+    }
+    input#d-input {
+        outline: none;
+        margin: 0.8rem 0 0 0rem;
+        width: 21rem;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 2px solid blue;
+    }
+    .btn-container {
+        display: flex;
+        position: absolute;
+        /* grid-template-columns: 1fr 1fr; */
+        grid-gap: 2rem;
+        margin: 5rem 0 0 0rem;
+    }
+    .big-text {
+        font-size: 1.5rem;
+        line-height: 1;
+        margin: 0 2rem;
+        font-weight: bold;
+    }
+}
+/* media query 400 */
+@media (max-width: 425px){
+    h1{
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-top: -10rem;
+        text-align: center;
+    }
+    h1.date-container {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: -7rem 0 0 -1.5rem;
+    }
+    input.Btn {
+        height: 2rem;
+        width: 6.5rem;
+        outline: none;
+        cursor: pointer;
+        border: none;
+    }
+    .btn-container {
+        display: flex;
+        position: absolute;
+        grid-gap: 2rem;
+        margin: 5rem 0 0 -1rem;
+    }
+    input#d-input {
+        outline: none;
+        margin: 0.8rem 0 0 -2rem;
+        width: 14rem;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 2px solid blue;
+    }
+    body {
+        background: #ccc;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0 -11rem;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
+        position: fixed;
+        height: 100%;
+    }
+    .countdown-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 47.5rem;
+    }
+    .ct-ol span {
+        font-size: 1rem;
+    }
+    .big-text {
+        font-size: 1.1rem;
+        line-height: 1;
+        margin: 0 2rem;
+        font-weight: bold;
+    }
+    .add-date-container {
+        background: #eee;
+        /* background: #ccc; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-position: center center;
+        height: 13rem;
+        width: 19rem;
+        border-radius: 1rem;
+        /* transition: all 5s ease-in-out; */
+        /* transition: all ease-in 0.5s; */
+    }
+    span.Btn-close {
+        display: flex;
+        position: absolute;
+        font-size: 3rem;
+        font-weight: 300;
+        top: 0;
+        margin-right: -20rem;
+        margin-top: 1rem;
+    }
+    button.button {
+        background: #18314f;
+        color: white;
+        padding: 0.8rem 2rem;
+        text-align: center;
+        border-radius: 1rem;
+        height: 2.5rem;
+        width: 10rem;
+        border: none;
+        outline: none;
+        font-weight: normal;
+        margin-top: 10rem;
+        display: flex;
+        position: absolute;
+        text-transform: capitalize;
+    }
+    a#follow > button {
+        margin: 18rem 0 0 -5rem;
+        background: #eee;
+        color: black;
+        text-align: center;
+        padding: 0.8rem 3rem;
+    }
+}
+/* media query 375 */
+@media (max-width: 375px){
+    h1{
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-top: -10rem;
+        text-align: center;
+    }
+    h1.date-container {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: -7rem 0 0 -1.5rem;
+    }
+    input.Btn {
+        height: 2rem;
+        width: 6.5rem;
+        outline: none;
+        cursor: pointer;
+        border: none;
+    }
+    .btn-container {
+        display: flex;
+        position: absolute;
+        grid-gap: 2rem;
+        margin: 5rem 0 0 -1rem;
+    }
+    input#d-input {
+        outline: none;
+        margin: 0.8rem 0 0 -2rem;
+        width: 14rem;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 2px solid blue;
+    }
+    body {
+        background: #ccc;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0 -11rem;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
+        position: fixed;
+        height: 100%;
+    }
+    .countdown-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 45.5rem;
+    }
+    .ct-ol span {
+        font-size: 1rem;
+    }
+    .ct-ol {
+        text-align: center;
+        background: #eee;
+        margin: 0 0.4rem 0 0rem;
+        padding: 1rem 0 1rem 0;
+    }
+    .big-text {
+        font-size: 1.1rem;
+        line-height: 1;
+        margin: 0 2rem;
+        font-weight: bold;
+    }
+    .add-date-container {
+        background: #eee;
+        /* background: #ccc; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-position: center center;
+        height: 13rem;
+        width: 19rem;
+        border-radius: 1rem;
+        /* transition: all 5s ease-in-out; */
+        /* transition: all ease-in 0.5s; */
+    }
+    span.Btn-close {
+        display: flex;
+        position: absolute;
+        font-size: 3rem;
+        font-weight: 300;
+        top: 0;
+        margin-right: -20rem;
+        margin-top: 1rem;
+    }
+}
+/* media query 320 */
+@media (max-width: 320px){
+    h1 {
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-top: -9rem;
+        text-align: center;
+    }
+    h1.date-container {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: -7rem 0 0 0;
+    }
+    input.Btn {
+        height: 2rem;
+        width: 6.5rem;
+        outline: none;
+        cursor: pointer;
+        border: none;
+    }
+    .btn-container {
+        display: flex;
+        position: absolute;
+        grid-gap: 2rem;
+        margin: 5rem 0 0 0;
+    }
+    input#d-input {
+        outline: none;
+        margin: 0.8rem 0 0 0;
+        width: 14rem;
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 2px solid blue;
+    }
+    body {
+        background: #ccc;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0 -13rem;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
+        position: fixed;
+        height: 100%;
+    }
+    .countdown-container {
+        display: grid;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 45.5rem;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-gap: 0.5rem;
+    }
+    .ct-ol span {
+        font-size: 1rem;
+    }
+    .ct-ol {
+        text-align: center;
+        background: #eee;
+        margin: 0 0.4rem 0 0rem;
+        padding: 1rem 0 1rem 0;
+    }
+    .big-text {
+        font-size: 1.1rem;
+        line-height: 1;
+        margin: 0 2rem;
+        font-weight: bold;
+    }
+    .add-date-container {
+        background: #eee;
+        /* background: #ccc; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        background-position: center center;
+        height: 13rem;
+        width: 17rem;
+        border-radius: 1rem;
+        /* transition: all 5s ease-in-out; */
+        /* transition: all ease-in 0.5s; */
+    }
+    span.Btn-close {
+        display: flex;
+        position: absolute;
+        font-size: 3rem;
+        font-weight: 300;
+        top: 0;
+        margin-right: -15rem;
+        margin-top: 1rem;
+    }
+    button.button {
+        background: #18314f;
+        color: white;
+        padding: 0.8rem 2rem;
+        text-align: center;
+        border-radius: 1rem;
+        height: 2.5rem;
+        width: 10rem;
+        border: none;
+        outline: none;
+        font-weight: normal;
+        margin-top: 19rem;
+        display: flex;
+        position: absolute;
+        text-transform: capitalize;
+    }
+    a#follow > button {
+        margin: 25rem 0 0 -5rem;
+        background: #eee;
+        color: black;
+        text-align: center;
+        padding: 0.8rem 3rem;
+    }
+    
+    
+}

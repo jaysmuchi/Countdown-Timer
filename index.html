@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDownTimer</title>
+    <link rel="shortcut icon" href="favicon.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Count Down Timer</h1>
+
+    <button class="button" id="btn-display">Add Event Date</button>
+    <a href="https://x.com/jaysmuchi?s=09" target="_blank" id="follow" rel="noopener noreferrer"><button class="button" id="btn-display">follow me</button></a>
+
+    <div class="countdown-container">
+        <div class="ct-ol days-container">
+            <p class="big-text" id="days">0</p>
+            <span>days</span>
+        </div>
+        <div class="ct-ol hours-container">
+            <p class="big-text" id="hours">0</p>
+            <span>hours</span>
+        </div>
+        <div class="ct-ol mins-container">
+            <p class="big-text" id="mins">0</p>
+            <span>mins</span>
+        </div>
+        <div class="ct-ol seconds-container">
+            <p class="big-text" id="sec">0</p>
+            <span>seconds</span>
+        </div>
+    </div>
+
+    <!-- new Event container -->
+    <div class="new-event-container" id="n-event-container">
+        <span class="Btn-close" id="Btn-close-panel">x</span>
+        <div class="add-date-container">
+            <h1 class="date-container">Select new Date to Count Down</h1>
+            <input type="date" id="d-input" name="d-input">
+        </div>
+        <div class="btn-container">
+            <input type="button" value="+ Add" id="add-Btn" name="Add" class="Btn">
+            <input type="button" value="x Cancel" id="close-Ctn" name="Cancel" class="Btn">
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
